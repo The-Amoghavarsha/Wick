@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+echo "$(figlet Wick)\n"
+echo "Powered by Wikipedia, Written by Amoghavarsha, Twitter - @TheAmoghavarsha\n"
+echo "Enter your search query: "; read word ; curl -s https://en.wikipedia.org/wiki/$word | grep -Em1 "<p>" | sed 's/<[^>]*>//g' | sed 's/&#91;[0-9]&#93;//g' ; curl -s https://en.wikipedia.org/wiki/$word | grep -Em2 "<p>" | tail -n1 | sed 's/<[^>]*>//g' | sed 's/&#91;[a-zA-Z0-9][a-zA-Z0-9]&#93;//g' ; curl -s https://en.wikipedia.org/wiki/$word | grep -Em3 "<p>" | tail -n1 | sed 's/<[^>]*>//g' | sed 's/&#91;[a-zA-Z0-9][a-zA-Z0-9]&#93;//g' ; curl -s https://en.wikipedia.org/wiki/$word | grep -Em4 "<p>" | tail -n1 | sed 's/<[^>]*>//g' | sed 's/&#91;[a-zA-Z0-9][a-zA-Z0-9]&#93;//g'
+
+
+
+
